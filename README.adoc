@@ -1,13 +1,13 @@
 == R3S
 
 image:https://travis-ci.org/oskopek/r3s.svg?branch=master["Build Status", link="https://travis-ci.org/oskopek/r3s"]
-image:https://coveralls.io/repos/oskopek/r3s/badge.png?branch=master["Coverage status", link="https://coveralls.io/r/oskopek/r3s?branch=master"]
-image:https://www.ohloh.net/p/r3s/widgets/project_thin_badge.gif["Ohloh widget", link="https://www.ohloh.net/p/r3s"]
+//image:https://coveralls.io/repos/oskopek/r3s/badge.png?branch=master["Coverage status", link="https://coveralls.io/r/oskopek/r3s?branch=master"]
+//image:https://www.ohloh.net/p/r3s/widgets/project_thin_badge.gif["Ohloh widget", link="https://www.ohloh.net/p/r3s"]
 
-A car recognizing and speed calculation platform.
+Running Race Registration System
 
-=== Screenshot
-image:http://cdn.imghack.se/images/a6f3be78f72232fa6e9f09a11c53f7a6.png["R3S screenshot", scalewidth="20%"]
+//=== Screenshot
+//image:http://cdn.imghack.se/images/a6f3be78f72232fa6e9f09a11c53f7a6.png["R3S screenshot", scalewidth="20%"]
 
 === Modules
 R3S consists of several modules:
