@@ -16,6 +16,8 @@
 
 package com.oskopek.r3s.web.reports;
 
+import com.oskopek.r3s.core.model.DefaultRegistration;
+import com.oskopek.r3s.core.model.Runner;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JRExporterParameter;
@@ -23,14 +25,9 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
-import com.oskopek.r3s.core.model.Address;
-import com.oskopek.r3s.core.model.CarData;
-import com.oskopek.r3s.core.model.file.FileEntry;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -58,13 +55,13 @@ public class BasicReportGenerator {
      * @param tz                    TimeZone of the returned date (it is stored in UTC)
      * @throws JRException if an error during the generation occurs
      */
-    public BasicReportGenerator(FileEntry e, String templateFilename, String reportBuilderLocation,
+    public BasicReportGenerator(DefaultRegistration e, String templateFilename, String reportBuilderLocation,
                                 String reportName, String hostURL, TimeZone tz) throws JRException {
 
         Map<String, Object> values = new HashMap<>();
         Map<String, Object> parameters = new HashMap<>();
 
-        CarData data = e.getCarData();
+        Runner runner = e.getRunner();
 
         Long entryId = e.getId() == null ? 0 : e.getId();
         String reportId = entryId + "-" + System.currentTimeMillis();
@@ -83,7 +80,9 @@ public class BasicReportGenerator {
         parameters.put("reportdate", dateFormat.format(new Date(System.currentTimeMillis())));
 
         // data
-        Address add = data.getAddress();
+
+        /*
+        Address add = runner.getAddress();
         String dataLocation = add.print();
 
         // parameters.put("id", Long.toString(data.getId()));
@@ -96,13 +95,14 @@ public class BasicReportGenerator {
             parameters.put("previewURL", "/reports/OpenCV_Logo_with_text.png");
         }
 
-        parameters.put("date", dateFormat.format(data.getTimestamp()));
+        parameters.put("date", dateFormat.format(runner.getTimestamp()));
         parameters.put("location", dataLocation);
-        parameters.put("LPNumber", data.getNumberPlate().getText());
+        parameters.put("LPNumber", runner.getNumberPlate().getText());
         parameters.put("videoURL", hostURL + "/servlet/GenerateVideo?entry_id=" + e.getId().toString());
-        parameters.put("time", timeFormat.format(data.getTimestamp()));
-        parameters.put("speed", Double.toString(data.getSpeed().getSpeed()) + " "
-                + data.getSpeed().getUnit().toString());
+        parameters.put("time", timeFormat.format(runner.getTimestamp()));
+        parameters.put("speed", Double.toString(runner.getSpeed().getSpeed()) + " "
+                + runner.getSpeed().getUnit().toString());
+        */
 
         // parameters.put
 

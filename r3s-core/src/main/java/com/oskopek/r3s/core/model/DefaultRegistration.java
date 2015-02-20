@@ -13,20 +13,20 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class DefaultRegistration extends AbstractModel implements Registration {
 
-    private Runner runner;
+    private DefaultRunner runner;
 
     private int raceNumber;
-    private Category category;
+    private AgeRangeCategory category;
 
     private boolean confirmed, accepted;
 
-    private Results results;
+    private NanoResults results;
 
     public DefaultRegistration() {
         // JPA intentionally empty
     }
 
-    public DefaultRegistration(boolean accepted, Category category, boolean confirmed, int raceNumber, Results results, Runner runner) {
+    public DefaultRegistration(boolean accepted, AgeRangeCategory category, boolean confirmed, int raceNumber, NanoResults results, DefaultRunner runner) {
         this.accepted = accepted;
         this.category = category;
         this.confirmed = confirmed;
@@ -37,7 +37,7 @@ public class DefaultRegistration extends AbstractModel implements Registration {
 
     @NotNull
     @Override
-    public Category getCategory() {
+    public AgeRangeCategory getCategory() {
         return category;
     }
 
@@ -49,7 +49,7 @@ public class DefaultRegistration extends AbstractModel implements Registration {
 
     @Embedded
     @Override
-    public Results getResults() {
+    public NanoResults getResults() {
         return results;
     }
 
@@ -67,7 +67,7 @@ public class DefaultRegistration extends AbstractModel implements Registration {
 
     @NotNull
     @Override
-    public Runner getRunner() {
+    public DefaultRunner getRunner() {
         return runner;
     }
 
