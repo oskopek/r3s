@@ -36,7 +36,7 @@ import java.io.Serializable;
  * The main purpose of this class is to handle the ID of all models and all compares that are done using the id.
  */
 @MappedSuperclass
-public abstract class AbstractModel implements Serializable, Comparable<AbstractModel> {
+public abstract class AbstractEntity implements Serializable, Comparable<AbstractEntity> {
 
     private static final long serialVersionUID = -5140579589148423614L;
 
@@ -70,7 +70,7 @@ public abstract class AbstractModel implements Serializable, Comparable<Abstract
     public abstract int hashCode();
 
     @Override
-    public int compareTo(AbstractModel o) {
+    public int compareTo(AbstractEntity o) {
         return new CompareToBuilder().append(getClass().getName(), o.getClass().getName()).append(id, o.id)
                 .toComparison();
     }

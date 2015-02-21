@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * Created by oskopek on 2/20/15.
  */
 @Entity
-public class AgeRangeCategory extends AbstractModel implements Category {
+public class AgeRangeCategory extends AbstractEntity implements Category {
 
     private int minAge, maxAge;
     private String name;
@@ -39,6 +39,21 @@ public class AgeRangeCategory extends AbstractModel implements Category {
     @Override
     public String getName() {
         return name;
+    }
+
+    //Because of JPA
+    private void setMaxAge(int maxAge) {
+        this.maxAge = maxAge;
+    }
+
+    //Because of JPA
+    private void setMinAge(int minAge) {
+        this.minAge = minAge;
+    }
+
+    //Because of JPA
+    private void setName(String name) {
+        this.name = name;
     }
 
     @Override

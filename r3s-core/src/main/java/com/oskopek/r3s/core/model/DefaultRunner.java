@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * Created by oskopek on 2/20/15.
  */
 @Entity
-public class DefaultRunner extends AbstractModel implements Runner {
+public class DefaultRunner extends AbstractEntity implements Runner {
 
     private String firstName, lastName, teamName;
     private int birthYear;
@@ -48,6 +48,26 @@ public class DefaultRunner extends AbstractModel implements Runner {
     @Override
     public String getTeamName() {
         return teamName;
+    }
+
+    //Because of JPA
+    private void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    //Because of JPA
+    private void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    //Because of JPA
+    private void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    //Because of JPA
+    private void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     @Override

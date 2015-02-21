@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
  * Created by oskopek on 2/20/15.
  */
 @Entity
-public class DefaultRegistration extends AbstractModel implements Registration {
+public class DefaultRegistration extends AbstractEntity implements Registration {
 
     private DefaultRunner runner;
 
@@ -22,7 +22,7 @@ public class DefaultRegistration extends AbstractModel implements Registration {
 
     private NanoResults results;
 
-    public DefaultRegistration() {
+    private DefaultRegistration() {
         // JPA intentionally empty
     }
 
@@ -69,6 +69,36 @@ public class DefaultRegistration extends AbstractModel implements Registration {
     @Override
     public DefaultRunner getRunner() {
         return runner;
+    }
+
+    //Because of JPA
+    private void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
+
+    //Because of JPA
+    private void setCategory(AgeRangeCategory category) {
+        this.category = category;
+    }
+
+    //Because of JPA
+    private void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    //Because of JPA
+    private void setRaceNumber(int raceNumber) {
+        this.raceNumber = raceNumber;
+    }
+
+    //Because of JPA
+    private void setResults(NanoResults results) {
+        this.results = results;
+    }
+
+    //Because of JPA
+    private void setRunner(DefaultRunner runner) {
+        this.runner = runner;
     }
 
     @Override
