@@ -32,6 +32,13 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Arquillian.class)
 public class RolesIT {
 
+    private static final String adminRole = "admin";
+    private static final String userRole = "user";
+    @Inject
+    private HttpServletRequest adminRequest;
+    @Inject
+    private HttpServletRequest userRequest;
+
     @Deployment
     public static WebArchive createDeployment() {
 
@@ -47,15 +54,6 @@ public class RolesIT {
 
         return testArchive;
     }
-
-    @Inject
-    private HttpServletRequest adminRequest;
-
-    @Inject
-    private HttpServletRequest userRequest;
-
-    private static final String adminRole = "admin";
-    private static final String userRole = "user";
 
     @Test
     public void userRoleTest() throws Exception {

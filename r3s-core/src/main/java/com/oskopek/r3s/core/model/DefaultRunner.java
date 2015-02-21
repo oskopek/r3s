@@ -32,10 +32,20 @@ public class DefaultRunner extends AbstractEntity implements Runner {
         return birthYear;
     }
 
+    //Because of JPA
+    private void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
     @NotNull
     @Override
     public String getFirstName() {
         return firstName;
+    }
+
+    //Because of JPA
+    private void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @NotNull
@@ -44,25 +54,15 @@ public class DefaultRunner extends AbstractEntity implements Runner {
         return lastName;
     }
 
+    //Because of JPA
+    private void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     @NotNull
     @Override
     public String getTeamName() {
         return teamName;
-    }
-
-    //Because of JPA
-    private void setBirthYear(int birthYear) {
-        this.birthYear = birthYear;
-    }
-
-    //Because of JPA
-    private void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    //Because of JPA
-    private void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     //Because of JPA
@@ -78,10 +78,10 @@ public class DefaultRunner extends AbstractEntity implements Runner {
     @Override
     public boolean equals(Object o) {
         if (o == null) {
-        return false;
-    } else if (!(o instanceof DefaultRunner)) {
-        return false;
-    }
+            return false;
+        } else if (!(o instanceof DefaultRunner)) {
+            return false;
+        }
         DefaultRunner lr = (DefaultRunner) o;
         return new EqualsBuilder().append(firstName, lr.getFirstName()).append(lastName, lr.getLastName())
                 .append(birthYear, lr.getBirthYear()).append(teamName, lr.getTeamName()).isEquals();

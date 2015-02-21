@@ -6,6 +6,7 @@ package com.oskopek.r3s.core.model;
 public interface Category {
 
     public boolean isAgeAllowed(int age);
+
     public String getName();
 
 }

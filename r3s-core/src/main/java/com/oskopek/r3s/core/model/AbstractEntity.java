@@ -29,10 +29,10 @@ import java.io.Serializable;
 /**
  * Serves as the base abstract class for all Entity model classes. Implements Serializable and is Comparable with other
  * AbstractModels.
- * <p/>
+ * <p>
  * The preferred way to override <code>equals</code> and <code>hashCode</code> is to use Apache Commons {@link EqualsBuilder}
  * and {@link HashCodeBuilder}. Do not append the id field to any of the two methods.
- * <p/>
+ * <p>
  * The main purpose of this class is to handle the ID of all models and all compares that are done using the id.
  */
 @MappedSuperclass
@@ -70,7 +70,7 @@ public abstract class AbstractEntity implements Serializable, Comparable<Abstrac
     public abstract int hashCode();
 
     @Override
-    public int compareTo(AbstractEntity o) {
+    public int compareTo(@NotNull AbstractEntity o) {
         return new CompareToBuilder().append(getClass().getName(), o.getClass().getName()).append(id, o.id)
                 .toComparison();
     }

@@ -6,8 +6,11 @@ package com.oskopek.r3s.core.model;
 public interface Runner {
 
     public String getFirstName();
+
     public String getLastName();
+
     public int getBirthYear();
+
     public String getTeamName();
 
     public int age();

@@ -35,7 +35,7 @@ public class RegistrationBean {
     /**
      * Persists the list of FileEntries to the database.
      *
-     * @param entries array of FileEntries to persist
+     * @param registrations array of FileEntries to persist
      * @see EntityManager#persist(Object)
      */
     public void persist(DefaultRegistration... registrations) {
@@ -59,7 +59,7 @@ public class RegistrationBean {
 
     /**
      * Queries the database, selecting all FileEntries in the table.
-     * <p/>
+     * <p>
      * Query: <code>select e from FileEntry e</code>
      *
      * @return the list result of the query
@@ -72,7 +72,7 @@ public class RegistrationBean {
     /**
      * Removes the list of FileEntries from the database.
      *
-     * @param entries array of FileEntries to remove
+     * @param registrations array of FileEntries to remove
      * @see EntityManager#remove(Object)
      */
     public void remove(DefaultRegistration... registrations) {

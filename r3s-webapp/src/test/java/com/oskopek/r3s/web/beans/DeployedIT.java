@@ -34,6 +34,9 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(Arquillian.class)
 public class DeployedIT {
 
+    @EJB
+    private RegistrationBean registrationBean;
+
     @Deployment
     public static WebArchive createDeployment() {
 
@@ -51,9 +54,6 @@ public class DeployedIT {
 
         return testArchive;
     }
-
-    @EJB
-    private RegistrationBean registrationBean;
 
     @Test
     public void beanInjectionTest() {

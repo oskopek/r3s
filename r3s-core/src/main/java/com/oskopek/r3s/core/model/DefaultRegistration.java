@@ -41,10 +41,20 @@ public class DefaultRegistration extends AbstractEntity implements Registration 
         return category;
     }
 
+    //Because of JPA
+    private void setCategory(AgeRangeCategory category) {
+        this.category = category;
+    }
+
     @NotNull
     @Override
     public int getRaceNumber() {
         return raceNumber;
+    }
+
+    //Because of JPA
+    private void setRaceNumber(int raceNumber) {
+        this.raceNumber = raceNumber;
     }
 
     @Embedded
@@ -53,10 +63,20 @@ public class DefaultRegistration extends AbstractEntity implements Registration 
         return results;
     }
 
+    //Because of JPA
+    private void setResults(NanoResults results) {
+        this.results = results;
+    }
+
     @NotNull
     @Override
     public boolean isAccepted() {
         return accepted;
+    }
+
+    //Because of JPA
+    private void setAccepted(boolean accepted) {
+        this.accepted = accepted;
     }
 
     @NotNull
@@ -65,35 +85,15 @@ public class DefaultRegistration extends AbstractEntity implements Registration 
         return confirmed;
     }
 
-    @NotNull
-    @Override
-    public DefaultRunner getRunner() {
-        return runner;
-    }
-
-    //Because of JPA
-    private void setAccepted(boolean accepted) {
-        this.accepted = accepted;
-    }
-
-    //Because of JPA
-    private void setCategory(AgeRangeCategory category) {
-        this.category = category;
-    }
-
     //Because of JPA
     private void setConfirmed(boolean confirmed) {
         this.confirmed = confirmed;
     }
 
-    //Because of JPA
-    private void setRaceNumber(int raceNumber) {
-        this.raceNumber = raceNumber;
-    }
-
-    //Because of JPA
-    private void setResults(NanoResults results) {
-        this.results = results;
+    @NotNull
+    @Override
+    public DefaultRunner getRunner() {
+        return runner;
     }
 
     //Because of JPA

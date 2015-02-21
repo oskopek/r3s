@@ -30,25 +30,25 @@ public class AgeRangeCategory extends AbstractEntity implements Category {
         return maxAge;
     }
 
+    //Because of JPA
+    private void setMaxAge(int maxAge) {
+        this.maxAge = maxAge;
+    }
+
     @NotNull
     public int getMinAge() {
         return minAge;
+    }
+
+    //Because of JPA
+    private void setMinAge(int minAge) {
+        this.minAge = minAge;
     }
 
     @NotNull
     @Override
     public String getName() {
         return name;
-    }
-
-    //Because of JPA
-    private void setMaxAge(int maxAge) {
-        this.maxAge = maxAge;
-    }
-
-    //Because of JPA
-    private void setMinAge(int minAge) {
-        this.minAge = minAge;
     }
 
     //Because of JPA

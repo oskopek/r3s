@@ -8,9 +8,11 @@ public interface Registration {
     public Runner getRunner();
 
     public int getRaceNumber();
+
     public Category getCategory();
 
     public boolean isConfirmed();
+
     public boolean isAccepted();
 
     public Results getResults();

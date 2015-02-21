@@ -27,14 +27,14 @@ import org.junit.runner.RunWith;
 import javax.ejb.EJB;
 import java.io.File;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 /**
  *
  */
 @RunWith(Arquillian.class)
 public class PersistenceIT {
+
+    @EJB
+    private RegistrationBean registrationBean;
 
     @Deployment
     public static WebArchive createDeployment() {
@@ -54,9 +54,6 @@ public class PersistenceIT {
 
         return testArchive;
     }
-
-    @EJB
-    private RegistrationBean registrationBean;
 
     @Test
     public void persistenceTest() {

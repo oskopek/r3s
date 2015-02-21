@@ -16,9 +16,7 @@
 
 package com.oskopek.r3s.web.servlet;
 
-import org.apache.commons.lang.builder.CompareToBuilder;
 import com.oskopek.r3s.web.beans.RegistrationBean;
-import com.oskopek.r3s.web.reports.WebReportTableMember;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -28,12 +26,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.TimeZone;
 
 /**
  * A Servlet that retrieves all DefaultRegistrations from the database and formats them into a nice table.
@@ -42,11 +34,9 @@ import java.util.TimeZone;
 public class RegistrationTableServlet extends HttpServlet {
 
     private static final long serialVersionUID = 650302178430670688L;
-
+    private static final String adminRole = "admin";
     @EJB
     private RegistrationBean bean;
-
-    private static final String adminRole = "admin";
 
     /**
      * @param request  the HttpServletRequest

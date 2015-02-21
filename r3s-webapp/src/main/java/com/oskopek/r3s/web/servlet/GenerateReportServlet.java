@@ -17,9 +17,9 @@
 package com.oskopek.r3s.web.servlet;
 
 import com.oskopek.r3s.core.model.DefaultRegistration;
-import net.sf.jasperreports.engine.JRException;
 import com.oskopek.r3s.web.beans.RegistrationBean;
 import com.oskopek.r3s.web.reports.BasicReportGenerator;
+import net.sf.jasperreports.engine.JRException;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -44,7 +44,6 @@ public class GenerateReportServlet extends HttpServlet {
     /**
      * @param request  the HttpServletRequest
      * @param response the HttpServletResponse
-     * @throws ServletException
      * @throws IOException
      * @throws JRException      if an error during generation of the report occurs
      * @see GenerateReportServlet
