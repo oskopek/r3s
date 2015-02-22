@@ -11,7 +11,7 @@ Scenarios:
 a new component. Typically these new modules will need to be enabled and configured in
 standalone.xml
 
-Unless one of the above scenarios is required there is no need to modify the
+Unless one of the above scenarios is required there is no need to modify the 
 modules directory.
 
 NOTE: Replacing default modules as in scenario 1 can cause conflicts between modules so
