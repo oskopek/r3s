@@ -1,0 +1,79 @@
+== R3S
+
+image:https://travis-ci.org/oskopek/r3s.svg?branch=master["Build Status", link="https://travis-ci.org/oskopek/r3s"]
+//image:https://coveralls.io/repos/oskopek/r3s/badge.png?branch=master["Coverage status", link="https://coveralls.io/r/oskopek/r3s?branch=master"]
+//image:https://www.ohloh.net/p/r3s/widgets/project_thin_badge.gif["Ohloh widget", link="https://www.ohloh.net/p/r3s"]
+
+Running Race Registration System
+
+//=== Screenshot
+//image:http://cdn.imghack.se/images/a6f3be78f72232fa6e9f09a11c53f7a6.png["R3S screenshot", scalewidth="20%"]
+
+=== Modules
+R3S consists of several modules:
+
+* *r3s-core* -- core detection and recognition module
+* *r3s-webapp* -- a Java EE web-app implementation of the R3S Core
+
+R3S uses http://semver.org/[semantic versioning].
+
+=== Building
+* See: How-to setup your *build environment*:
+link:./docs/howto-setup-environment-windows.adoc[Windows], link:./docs/howto-setup-environment-linux.adoc[Linux & Mac]
+* *Recommended*: +mvn clean install -DskipTests+
+* To run *unit tests*: +mvn clean install+
+* To run *integration tests*: +mvn clean install -Pit,wildfly-it+
+* To *clean*, run: +mvn clean+
+* Run a simple link:./docs/core/core-usage.adoc[r3s-core demo]
+
+//=== Getting help
+
+//* Post questions or comments on our Google Groups link:https://groups.google.com/d/forum/r3s[mailing list]
+//* Join our *IRC channel*: Join *#r3s* on *irc.freenode.net*
+
+=== Contributing
+*Everyone* is encouraged to help improve this project.
+
+Here are some ways *you* can contribute:
+
+* by using alpha, beta, and pre-release versions
+* by reporting bugs
+* by suggesting new features
+* by implementing link:./docs/goals.adoc[planned features]
+* by translating to a new language
+* by link:./docs/howto-write-documentation.adoc[writing or editing documentation]
+* by writing specifications
+* by writing code (*no patch is too small*: fix typos, add comments, clean up inconsistent whitespace)
+* by refactoring code
+* by closing https://github.com/oskopek/r3s/issues[issues]
+* by reviewing patches
+
+=== Submitting an Issue
+We use the https://github.com/oskopek/r3s/issues[GitHub issue tracker] to track bugs and features. Before
+submitting a bug report or feature request, check to make sure it hasn't
+already been submitted. When submitting a bug report, please include a https://gist.github.com/[Gist]
+that includes a stack trace and any details that may be necessary to reproduce
+the bug, including your Java version and operating system.
+
+=== Submitting a Pull Request
+. http://help.github.com/fork-a-repo/[Fork the repository]
+. http://learn.github.com/p/branching.html[Create a topic branch]
+. Implement your feature or bug fix
+. If applicable, add tests for your feature or bug fix
+. Run +mvn clean install -Pit+
+.. If you contributed to *r3s-webapp*, run: `mvn clean install -Pit,wildfly-it`
+. If the tests fail, return to step 3 and 4
+. Add, commit, and push your changes
+. http://help.github.com/send-pull-requests/[Submit a pull request]
+
+
+=== Configuring the project for Eclipse with the m2eclipse plugin
+The m2eclipse plugin is a plugin in Eclipse for Maven.
+
+* Open Eclipse
+* Follow link:http://m2eclipse.sonatype.org/m2eclipse[the installation instructions of m2eclipse].
+** Follow the link *Installing m2eclipse* at the bottom.
+* Click menu *File*, menu item *Import*, tree item *Maven*, tree item *Existing Maven Projects*.
+* Click button *Browse*, select a repository directory. For example: `~/git/r3s`.
+
+For more information, see http://www.sonatype.com/books/m2eclipse-book/reference/[the m2eclipse book]
