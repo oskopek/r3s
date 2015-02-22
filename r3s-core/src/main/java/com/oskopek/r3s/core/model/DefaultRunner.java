@@ -5,6 +5,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
+import java.util.Calendar;
 
 /**
  * Created by oskopek on 2/20/15.
@@ -72,7 +73,10 @@ public class DefaultRunner extends AbstractEntity implements Runner {
 
     @Override
     public int age() {
-        return 0; // TODO calcAge
+        Calendar now = Calendar.getInstance();
+        now.setTimeInMillis(System.currentTimeMillis());
+        int age = now.get(Calendar.YEAR) - birthYear;
+        return age;
     }
 
     @Override

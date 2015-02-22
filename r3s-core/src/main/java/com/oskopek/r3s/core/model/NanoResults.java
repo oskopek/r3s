@@ -6,6 +6,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import javax.persistence.Embeddable;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 /**
  * Created by oskopek on 2/20/15.
@@ -35,7 +36,20 @@ public class NanoResults extends AbstractEmbeddable implements Results {
     @Transient
     @Override
     public String getResultTime() {
-        return resultTimeNano + ""; // TODO nanores
+        long time = resultTimeNano;
+
+        long CONVERT = 1_000_000_000;
+
+        long hours = time / (CONVERT * 3600);
+        time -= hours * CONVERT * 3600;
+
+        long minutes = time / (CONVERT * 60);
+        time -= minutes * CONVERT * 60;
+
+        BigDecimal seconds = BigDecimal.valueOf(time);
+        seconds = seconds.divide(BigDecimal.valueOf(CONVERT));
+
+        return String.format("%d:%02d:%06.3f", hours, minutes, seconds.doubleValue());
     }
 
     @Override
