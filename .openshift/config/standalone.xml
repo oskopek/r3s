@@ -104,6 +104,12 @@
                 <suffix value=".yyyy-MM-dd"/>
                 <append value="true"/>
             </periodic-rotating-file-handler>
+            <logger category="com.oskopek.r3s" use-parent-handlers="false">
+                <level name="DEBUG"/>
+                <handlers>
+                    <handler name="R3S"/>
+                </handlers>
+            </logger>
             <logger category="com.arjuna">
                 <level name="WARN"/>
             </logger>
@@ -121,12 +127,6 @@
             </logger>
             <logger category="jacorb.config">
                 <level name="ERROR"/>
-            </logger>
-            <logger category="com.oskopek.r3s" use-parent-handlers="false">
-                <level name="DEBUG"/>
-                <handlers>
-                    <handler name="R3S"/>
-                </handlers>
             </logger>
             <root-logger>
                 <level name="INFO"/>
