@@ -1,0 +1,20 @@
+== Authors and Contributors of R3S
+
+[cols="4*", options="header"]
+|===
+|Name
+|Nickname
+|Email address
+|Contribution
+
+|Ondrej Skopek
+|oskopek
+|skopekondrej@gmail.com
+|Founder
+
+|Matej Pribis
+|mattblackhand
+|matejpribis@gmail.com
+|WebApp HTML and CSS code
+
+|===
