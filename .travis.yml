@@ -1,9 +1,7 @@
 language: java
 
 jdk:
-  - openjdk7
-  - oraclejdk7
-#  - oraclejdk8 #JBoss7 hangs on JDK8
+  - openjdk13
 
 env:
   global:
